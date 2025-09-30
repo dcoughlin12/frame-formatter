@@ -1,4 +1,7 @@
-export default async function getCroppedImg(imageSrc: string, pixelCrop: { x: number, y: number, width: number, height: number }): Promise<string> {
+export default async function getCroppedImg(
+  imageSrc: string,
+  pixelCrop: { x: number; y: number; width: number; height: number }
+): Promise<string> {
   const image = await new Promise<HTMLImageElement>((resolve, reject) => {
     const img = new Image();
     img.src = imageSrc;
@@ -6,33 +9,59 @@ export default async function getCroppedImg(imageSrc: string, pixelCrop: { x: nu
     img.onerror = (error) => reject(error);
   });
 
-  const canvas = document.createElement('canvas');
-  const ctx = canvas.getContext('2d');
+  // Step 1: Crop the image
+  const cropCanvas = document.createElement("canvas");
+  const cropCtx = cropCanvas.getContext("2d");
 
-  if (!ctx) {
-    throw new Error('Could not get canvas context');
+  if (!cropCtx) {
+    throw new Error("Could not get canvas context");
   }
 
-  canvas.width = pixelCrop.width;
-  canvas.height = pixelCrop.height;
+  cropCanvas.width = pixelCrop.width;
+  cropCanvas.height = pixelCrop.height;
 
-  ctx.drawImage(
+  // Draw the cropped portion from the source image
+  cropCtx.drawImage(
     image,
-    pixelCrop.x,
-    pixelCrop.y,
-    pixelCrop.width,
-    pixelCrop.height,
+    pixelCrop.x, // source x
+    pixelCrop.y, // source y
+    pixelCrop.width, // source width
+    pixelCrop.height, // source height
+    0, // destination x
+    0, // destination y
+    pixelCrop.width, // destination width
+    pixelCrop.height // destination height
+  );
+
+  // Step 2: Resize to exactly 3840x2160 for Samsung Frame TV
+  const finalCanvas = document.createElement("canvas");
+  const finalCtx = finalCanvas.getContext("2d");
+
+  if (!finalCtx) {
+    throw new Error("Could not get canvas context");
+  }
+
+  finalCanvas.width = 3840;
+  finalCanvas.height = 2160;
+
+  // Draw the cropped image onto the final canvas at the exact dimensions
+  finalCtx.drawImage(
+    cropCanvas,
     0,
     0,
-    pixelCrop.width,
-    pixelCrop.height
+    cropCanvas.width,
+    cropCanvas.height,
+    0,
+    0,
+    3840,
+    2160
   );
 
   return new Promise<string>((resolve) => {
-    canvas.toBlob((blob) => {
+    finalCanvas.toBlob((blob) => {
       if (blob) {
         resolve(URL.createObjectURL(blob));
       }
-    }, 'image/jpeg');
+    }, "image/jpeg", 0.95);
   });
 }
