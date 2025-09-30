@@ -1,1 +1,84 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="31.88" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 257"><defs><linearGradient id="IconifyId1813088fe1fbc01fb466" x1="-.828%" x2="57.636%" y1="7.652%" y2="78.411%"><stop offset="0%" stop-color="#41D1FF"></stop><stop offset="100%" stop-color="#BD34FE"></stop></linearGradient><linearGradient id="IconifyId1813088fe1fbc01fb467" x1="43.376%" x2="50.316%" y1="2.242%" y2="89.03%"><stop offset="0%" stop-color="#FFEA83"></stop><stop offset="8.333%" stop-color="#FFDD35"></stop><stop offset="100%" stop-color="#FFA800"></stop></linearGradient></defs><path fill="url(#IconifyId1813088fe1fbc01fb466)" d="M255.153 37.938L134.897 252.976c-2.483 4.44-8.862 4.466-11.382.048L.875 37.958c-2.746-4.814 1.371-10.646 6.827-9.67l120.385 21.517a6.537 6.537 0 0 0 2.322-.004l117.867-21.483c5.438-.991 9.574 4.796 6.877 9.62Z"></path><path fill="url(#IconifyId1813088fe1fbc01fb467)" d="M185.432.063L96.44 17.501a3.268 3.268 0 0 0-2.634 3.014l-5.474 92.456a3.268 3.268 0 0 0 3.997 3.378l24.777-5.718c2.318-.535 4.413 1.507 3.936 3.838l-7.361 36.047c-.495 2.426 1.782 4.5 4.151 3.78l15.304-4.649c2.372-.72 4.652 1.36 4.15 3.788l-11.698 56.621c-.732 3.542 3.979 5.473 5.943 2.437l1.313-2.028l72.516-144.72c1.215-2.423-.88-5.186-3.54-4.672l-25.505 4.922c-2.396.462-4.435-1.77-3.759-4.114l16.646-57.705c.677-2.35-1.37-4.583-3.769-4.113Z"></path></svg>
+<!-- Frame TV — Après-ski retro icon (centered, cleaned) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="Frame TV retro apres-ski icon">
+  <defs>
+    <linearGradient id="grad-magenta-orange" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#D42CF0"></stop>
+      <stop offset="60%" stop-color="#FF4E6B"></stop>
+      <stop offset="100%" stop-color="#FF9A4A"></stop>
+    </linearGradient>
+    <linearGradient id="grad-cyan-yellow" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#00FFD1"></stop>
+      <stop offset="55%" stop-color="#00A3FF"></stop>
+      <stop offset="100%" stop-color="#FFE84D"></stop>
+    </linearGradient>
+    <radialGradient id="grad-sun" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#FFF59D"></stop>
+      <stop offset="60%" stop-color="#FFD66D"></stop>
+      <stop offset="100%" stop-color="#FF7A7A"></stop>
+    </radialGradient>
+    <linearGradient id="bg-deep" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0B1224"></stop>
+      <stop offset="100%" stop-color="#24102A"></stop>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="45%" r="70%">
+      <stop offset="60%" stop-color="rgba(0,0,0,0)"></stop>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.28)"></stop>
+    </radialGradient>
+    <pattern id="diag-stripes" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <rect width="40" height="20" fill="rgba(255,255,255,0.03)"></rect>
+    </pattern>
+    <clipPath id="clip-m1">
+      <path d="M0 360 L220 80 L420 360 Z"></path>
+    </clipPath>
+    <clipPath id="clip-m2">
+      <path d="M220 360 L340 140 L520 360 Z"></path>
+    </clipPath>
+  </defs>
+
+  <!-- background -->
+  <rect width="1024" height="1024" rx="170" ry="170" fill="url(#bg-deep)"></rect>
+  <rect width="1024" height="1024" rx="170" ry="170" fill="url(#vignette)"></rect>
+
+  <!-- neon accent -->
+  <g opacity="0.14" transform="rotate(-18 512 512)">
+    <rect x="-260" y="420" width="1600" height="120" fill="url(#grad-magenta-orange)"></rect>
+    <rect x="-260" y="340" width="1600" height="64" fill="url(#grad-cyan-yellow)"></rect>
+  </g>
+
+  <!-- centered icon -->
+  <g transform="translate(191,238) scale(1.18)">
+    <!-- frame -->
+    <rect x="0" y="0" width="544" height="464" rx="28" ry="28" fill="none" stroke="url(#grad-magenta-orange)" stroke-width="42" stroke-linejoin="round"></rect>
+    <rect x="22" y="22" width="500" height="420" rx="20" ry="20" fill="#0B1224" opacity="0.95"></rect>
+
+    <!-- mountains -->
+    <g transform="translate(40,36)">
+      <path d="M0 360 L220 80 L420 360 Z" fill="url(#grad-magenta-orange)"></path>
+      <g clip-path="url(#clip-m1)">
+        <rect x="0" y="64" width="460" height="32" fill="url(#grad-cyan-yellow)" opacity="0.95"></rect>
+        <rect x="0" y="112" width="460" height="26" fill="url(#grad-magenta-orange)" opacity="0.96"></rect>
+        <rect x="0" y="152" width="460" height="20" fill="url(#grad-cyan-yellow)" opacity="0.9"></rect>
+        <rect x="0" y="192" width="460" height="16" fill="url(#grad-magenta-orange)" opacity="0.88"></rect>
+        <rect x="-40" y="0" width="600" height="400" fill="url(#diag-stripes)" opacity="0.12"></rect>
+      </g>
+
+      <path d="M220 360 L340 140 L520 360 Z" fill="url(#grad-cyan-yellow)" opacity="0.98"></path>
+      <g clip-path="url(#clip-m2)">
+        <rect x="220" y="180" width="320" height="22" fill="url(#grad-magenta-orange)" opacity="0.92"></rect>
+        <rect x="220" y="220" width="320" height="16" fill="url(#grad-cyan-yellow)" opacity="0.88"></rect>
+      </g>
+
+      <!-- sun -->
+      <g transform="translate(420,48)">
+        <circle cx="0" cy="0" r="44" fill="url(#grad-sun)"></circle>
+        <circle cx="0" cy="0" r="64" fill="none" stroke="url(#grad-magenta-orange)" stroke-width="6" opacity="0.9"></circle>
+        <rect x="-14" y="-90" width="10" height="10" fill="rgba(255,255,255,0.08)"></rect>
+        <rect x="18" y="-78" width="12" height="12" fill="rgba(255,255,255,0.07)"></rect>
+      </g>
+
+      <path d="M60 312 L120 220 L180 260 L240 176 L300 300 L360 230 L420 312 Z" fill="rgba(0,0,0,0.12)" opacity="0.42"></path>
+    </g>
+
+    <rect x="64" y="444" width="416" height="6" rx="3" ry="3" fill="#ffffff" opacity="0.12"></rect>
+  </g>
+</svg>
